@@ -17,6 +17,7 @@ function handleSubmit(event) {
     .then(function(res) {
         console.log(res.main.temp)
         document.getElementById('results').innerHTML = res.main.temp
+        document.getElementById('resultname').innerHTML = formText
     })
 }
 
