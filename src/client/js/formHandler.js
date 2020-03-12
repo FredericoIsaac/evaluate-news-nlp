@@ -7,9 +7,6 @@ function handleSubmit(event) {
 
     //pass the formText to the server
     const url = `http://localhost:8081/api?input=${formText}`
-
-
-
     console.log("::: Form Submitted :::")
     fetch(url)
     .then(res => res.json())

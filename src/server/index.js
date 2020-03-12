@@ -4,7 +4,6 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 var aylien = require("aylien_textapi");
-// const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
 
@@ -16,15 +15,17 @@ console.log(__dirname)
 var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY,
-
     });
 
 textapi.classify({
-    'url': url
+    'url': input
     }, function(error, response) {
     if (error === null) {
         console.log(response);
-        // return response;
+        return response;
+    }
+    else {
+        console.log('there was an error!')
     }
     });
 
