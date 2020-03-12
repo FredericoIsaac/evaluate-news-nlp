@@ -15,7 +15,17 @@ console.log(__dirname)
 // set aylien API credentias
 var textapi = new aylien({
     application_id: process.env.API_ID,
-    application_key: process.env.API_KEY
+    application_key: process.env.API_KEY,
+
+    });
+
+textapi.classify({
+    'url': url
+    }, function(error, response) {
+    if (error === null) {
+        console.log(response);
+        // return response;
+    }
     });
 
 app.get('/', function (req, res) {
@@ -26,9 +36,5 @@ app.get('/', function (req, res) {
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
-
-// app.get('/test', function (req, res) {
-//     res.send(mockAPIResponse)
-// })
 
 
