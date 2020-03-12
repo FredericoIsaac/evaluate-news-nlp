@@ -17,7 +17,7 @@ var textapi = new aylien({
     application_key: process.env.API_KEY,
     });
 
-app.post("/classify", (req, res) => {
+app.post("/article", (req, res) => {
     const { url } = req.body;
     textapi.classify({ url }, (error, response) => {
         if (error == null) {

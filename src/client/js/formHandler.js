@@ -7,7 +7,7 @@ function handleSubmit(event) {
     Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
-    fetch("/classify", {
+    fetch("/article", {
         method: "POST",
         credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
