@@ -7,7 +7,12 @@ var aylien = require("aylien_textapi");
 
 const app = express()
 
+// Cors for cross origin allowance
+const cors = require('cors')
+app.use(cors());
+
 app.use(express.static('dist'))
+app.use(express.json()) // for parsing application/json
 
 console.log(__dirname)
 
@@ -17,13 +22,11 @@ var textapi = new aylien({
     application_key: process.env.API_KEY,
     });
 
-app.post("/article", (req, res) => {
-    const { url } = req.body;
-    textapi.classify({ url }, (error, response) => {
+app.post("/classify", (req, res) => {
+    textapi.classify({'url': req.body.url}, (error, response) => {
         if (error == null) {
             console.log(response);
-            return response;
-            
+            res.send(response)
         } else {
             console.log(error)
         }

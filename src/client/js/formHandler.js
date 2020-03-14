@@ -3,23 +3,32 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('article').value
-    console.log("formText:", formText)
-    Client.checkForName(formText)
+    // Client.checkForName(formText)
 
-    console.log("::: Form Submitted :::")
-    fetch("/article", {
+    let requestBody = {
+        url: formText
+    };
+
+    fetch("http://localhost:8081/classify", {
         method: "POST",
         credentials: "same-origin",
         headers: { "Content-Type": "application/json" },
-        body: formText
+        body: JSON.stringify(requestBody)
       })
-    .then(res => res.json())
-    .then(function(res) {
+    .then((res) => {
         console.log(res)
-        console.log(res.categories)
-        document.getElementById('results').innerHTML = res.categories
+        const response = res.json()
+        return response;
+    })
+    .then(function(response) {
+        console.log('test')
+        // console.log(res.categories)
+        // document.getElementById('results').innerHTML = res.categories
+        document.getElementById('results').innerHTML = response.language
     })
 }
 
+
 export { handleSubmit }
+
 
