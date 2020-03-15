@@ -23,10 +23,10 @@
 
         <main>
             <section>
-                <p id="errors"></p>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <label for="article">Enter an article URL:</label>
                     <input id="article" type="text" name="article" value="" placeholder="Article URL">
+                    <span id="errors" aria-live="polite"></span>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>

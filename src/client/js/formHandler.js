@@ -20,6 +20,7 @@ function handleSubmit(event) {
       })
     .then(res => res.json())
     .then(function(res) {
+        document.getElementById('errors').innerHTML = ''
         if (res.categories.length === 0) {
             document.getElementById('category').innerHTML = 'Uncategorized'
         } else {
