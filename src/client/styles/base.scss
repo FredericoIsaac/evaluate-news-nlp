@@ -1,7 +1,9 @@
 body {
+    // background-image: url("newspaper.jpg");
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 main {
@@ -9,6 +11,5 @@ main {
 }
 
 section {
-    max-width: 800px;
     margin: 50px auto;
 }
