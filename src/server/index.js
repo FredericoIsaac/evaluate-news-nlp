@@ -28,7 +28,7 @@ app.post("/classify", (req, res) => {
             console.log(response);
             res.send(response)
         } else {
-            console.log(error)
+            console.log('there was an error:', error)
         }
     });
 });

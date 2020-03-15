@@ -23,15 +23,17 @@
 
         <main>
             <section>
+                <p id="errors"></p>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <label for="article">Enter an article URL:</label>
                     <input id="article" type="text" name="article" value="" placeholder="Article URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <strong>Category:</strong>
+                <div id="category"></div>
             </section>
         </main>
 

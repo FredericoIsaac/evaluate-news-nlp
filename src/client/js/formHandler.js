@@ -3,11 +3,14 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('article').value
-    // Client.checkForName(formText)
+    if (Client.urlValidator(formText)) {
 
+    //create an object to be used in the fetch
     let requestBody = {
         url: formText
     };
+
+    console.log(requestBody)
 
     fetch("http://localhost:8081/classify", {
         method: "POST",
@@ -15,17 +18,20 @@ function handleSubmit(event) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody)
       })
-    .then((res) => {
-        console.log(res)
-        const response = res.json()
-        return response;
+    .then(res => res.json())
+    .then(function(res) {
+        if (res.categories.length === 0) {
+            document.getElementById('category').innerHTML = 'Uncategorized'
+        } else {
+            document.getElementById('category').innerHTML = res.categories[0].label
+        }
     })
-    .then(function(response) {
-        console.log('test')
-        // console.log(res.categories)
-        // document.getElementById('results').innerHTML = res.categories
-        document.getElementById('results').innerHTML = response.language
-    })
+}
+    else {
+        document.getElementById('errors').innerHTML = 'Please enter a valid URL'
+        document.getElementById('category').innerHTML = 'Unable to evaluate'
+
+    }
 }
 
 
