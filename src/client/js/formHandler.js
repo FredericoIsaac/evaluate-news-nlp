@@ -21,15 +21,12 @@ function handleSubmit(event) {
     .then(res => res.json())
     .then(function(res) {
         document.getElementById('errors').innerHTML = ''
-        if (res.categories.length === 0) {
-            document.getElementById('category').innerHTML = 'Uncategorized'
-        } else {
-            document.getElementById('category').innerHTML = res.categories[0].label
-        }
+        res.categories.length === 0 ? document.getElementById('category').innerHTML = 'Uncategorized' : document.getElementById('category').innerHTML = res.categories[0].label
+    
     })
 }
     else {
-        document.getElementById('errors').innerHTML = 'Please enter a valid URL'
+        document.getElementById('errors').innerHTML = 'Please enter a URL in the format http://www.example.com'
         document.getElementById('category').innerHTML = 'Unable to evaluate'
 
     }
