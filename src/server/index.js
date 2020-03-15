@@ -33,6 +33,17 @@ app.post("/classify", (req, res) => {
     });
 });
 
+app.post("/sentiment", (req, res) => {
+    textapi.sentiment({'url': req.body.url, 'mode': 'document'}, (error, response) => {
+        if (error == null) {
+            console.log(response);
+            res.send(response)
+        } else {
+            console.log('there was an error:', error)
+        }
+    });
+});
+
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
