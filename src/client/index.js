@@ -5,10 +5,15 @@ import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
+import Newspaper from './newspaper.jpg'
 
-// console.log(checkForName);
-
-// console.log("CHANGE!!");
+function component() {
+    const element = document.createElement('div')
+    const myNewspaper = new Image();
+    myNewspaper.src = Newspaper;
+    element.appendChild(myNewspaper);
+    return element;
+}
 
 export {
     urlValidator,
