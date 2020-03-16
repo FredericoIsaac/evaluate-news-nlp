@@ -22,7 +22,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "terser-webpack-plugin": "^2.3.5",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "workbox-webpack-plugin": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
