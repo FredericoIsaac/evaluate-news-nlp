@@ -37,10 +37,8 @@ function handleSubmit(event) {
     else { //if URL is not valid, display errors
         document.getElementById('errors').innerHTML = 'Please enter a URL in the format http://www.example.com'
         document.getElementById('category').innerHTML = 'Unable to evaluate'
-
     }
 }
-
 
 export { handleSubmit }
 
