@@ -1,6 +1,7 @@
 function handleSubmit(event) {
     event.preventDefault()
 
+    const form = document.getElementsByTagName('form')
     // check what text was put into the form field
     let formText = document.getElementById('article').value
     if (Client.urlValidator(formText)) { //if URL is valid, then fetch from the API and update the UI with the response
@@ -28,7 +29,6 @@ function handleSubmit(event) {
         })
         .then(res => res.json())
         .then(function(res) {
-            document.getElementById('errors').innerHTML = ''
             document.getElementById('polarity').innerHTML = res.polarity
             document.getElementById('subjectivity').innerHTML = res.subjectivity
         
@@ -36,8 +36,8 @@ function handleSubmit(event) {
     }
     else { //if URL is not valid, display errors
         document.getElementById('errors').innerHTML = 'Please enter a URL in the format http://www.example.com'
-        document.getElementById('category').innerHTML = 'Unable to evaluate'
     }
+    form.reset()
 }
 
 export { handleSubmit }
