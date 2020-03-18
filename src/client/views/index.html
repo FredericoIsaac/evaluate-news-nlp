@@ -3,34 +3,49 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Travel Planner</title>
+        <title>NewsCheck</title>
     </head>
 
     <body>
 
         <header>
             <div id="logo">
-            <p>Travel<br>Planner</p>
+            <p>News<br>Check</p>
             </div>
         </header>
 
         <main>
             <div id = "formstyle">
-                <h1>Travel Planner</h1>
+                <h1>News Analyzer</h1>
                 <form>
-                    <label for="destination">Where are you going?</label>
-                    <input id="destination" type="text" name="article" value="" placeholder="Enter a destination">
+                    <label for="article">Enter An Article URL:</label>
+                    <input id="article" type="text" name="article" value="" placeholder="https:www.example.com">
                     <span id="errors" aria-live="polite"></span>
                     <input id="button" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
                 <section>
-                    <h2>Form Text: <span id="formentry"></span></h2>
+                    <h2>Analysis:</h2>
+                    <h3>Category: <span id="category"></span></h3>
+                    <h3>Polarity: <span id="polarity"></span></h3>
+                    <h3>Subjectivity: <span id="subjectivity"></span></h3>
                 </section>
             </div>
         </main>
 
         <footer>
             <p>&copy Lisa Kamino 2020</p>
+            <p>Text Analysis Courtesy of Aylien https://aylien.com</p>
         </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js');
+                })
+            }
+        </script>
+
     </body>
 </html>

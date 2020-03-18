@@ -30,13 +30,17 @@ main h1 {
     width: 100%;
     margin: 70px auto;
     h2 {
+        font-size: 1.75em;
+        margin-bottom: 10px;
+    }
+    h3 {
         font-size: 1em;
         font-weight: bold;
         line-height: 1.5em;
     }
 }
 
-#formentry {
+#category, #polarity, #subjectivity {
     font-weight: normal;
 }
 
