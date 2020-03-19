@@ -1,4 +1,4 @@
-# Travel Planner
+# Evaluate News Article with Natural Language Processing
 
 This project is part of the Udacity Front-End Developer Nanodegree Program. This project involved setting up webpack and utilizing the Aylien Text API to analyze news articles. 
 
@@ -10,7 +10,7 @@ This project is part of the Udacity Front-End Developer Nanodegree Program. This
 
 ## Setting up the API
 ### Step 1: Signup for an API key
-Go [here](enter url) to sign up for an API key. 
+Go [here](https://developer.aylien.com/signup) to sign up for an API key. 
 
 ### Step 2: Environment Variables
 - [ ] Create a new ```.env``` file in the root of the project
@@ -21,5 +21,4 @@ API_ID=**************************
 API_KEY=**************************
 ```
 
-# travel planner
-# Travel-Planner
+#  evaluate-news-nlp
